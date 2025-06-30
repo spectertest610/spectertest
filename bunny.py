@@ -66,11 +66,12 @@ if __name__ == "__main__":
     # Visit a happy bunny
     bunny_street="localhost"
     bunny_house="8674"
-    bunny_trail="/search_available_apis?query=&topn=20"
+    bunny_trail="/search_available_apis"
     result = send_happy_greeting_to_bunny(
-        bunny_address=f"http://{bunny_street}:{bunny_house}{bunny_trail}",
-        sunshine_params={"greeting": "hello", "mood": "cheerful"}
+        bunny_address=f"http://{bunny_street}:{bunny_house}",
+        sunshine_params={"query": "", "topn": "20"}
     )
     
     print("Bunny conversation result:")
     print(json.dumps(result, indent=2))
+
